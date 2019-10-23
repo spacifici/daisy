@@ -106,7 +106,7 @@ abstract class BaseBrowserFragment : Fragment(), BackHandler, UserInteractionHan
                 requireComponents.useCases.tabsUseCases,
                 requireComponents.useCases.contextMenuUseCases,
                 view,
-                sessionId),
+                sessionId ),
             owner = this,
             view = view)
 
