@@ -19,14 +19,14 @@ import org.mozilla.reference.browser.ext.requireComponents
 /**
  * @author Ravjit Uppal
  */
-class HistoryFragment : Fragment(), BackHandler, HistoryItemListener {
+class HistoryFragment : Fragment(), BackHandler {
 
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var historyViewModel: HistoryViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        historyAdapter = HistoryAdapter(requireComponents.core.icons, this)
+        historyAdapter = HistoryAdapter(requireComponents.core.icons, ::onItemClicked)
         historyViewModel = ViewModelProviders.of(this,
             ViewModelFactory.getInstance(context.application)).get(HistoryViewModel::class.java)
         historyViewModel.getHistoryItems().observe(this, Observer {
@@ -43,7 +43,7 @@ class HistoryFragment : Fragment(), BackHandler, HistoryItemListener {
         history_list.adapter = historyAdapter
     }
 
-    override fun onItemClicked(position: Int) {
+    fun onItemClicked(position: Int) {
         historyViewModel.onItemClicked(position)
         onBackPressed()
     }

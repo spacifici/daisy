@@ -13,8 +13,10 @@ import org.mozilla.reference.browser.history.usecases.HistoryUseCases
 /**
  * @author Ravjit Uppal
  */
-class HistoryViewModel(private val historyUseCases: HistoryUseCases,
-                       private val sessionUseCases: SessionUseCases) : ViewModel() {
+class HistoryViewModel(
+    private val historyUseCases: HistoryUseCases,
+    private val sessionUseCases: SessionUseCases
+) : ViewModel() {
 
     private val historyItems = MutableLiveData<List<VisitInfo>>().apply { value = emptyList() }
 
