@@ -28,7 +28,7 @@ android {
         testInstrumentationRunnerArguments clearPackageData: 'true'
     }
 
-    aaptOptions{
+    aaptOptions {
         // default ignoreAssetsPattern list includes all files and folders starting with _
         // that breaks webextensions i18n as traslation are located in _locales folder
         ignoreAssetsPattern  '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
