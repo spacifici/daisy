@@ -103,7 +103,7 @@ class HistoryView(
             setUiForNormalMode(context.getString(R.string.history_screen_title), view.history_list, view.toolbar)
         } else {
             setUiForEditingMode(
-                context.getString(R.string.history_multiple_selected, historyAdapter.selectedItems.size),
+                context.resources.getQuantityString(R.plurals.history_items_selected, historyAdapter.selectedItems.size),
                 view.history_list,
                 view.toolbar
             )
